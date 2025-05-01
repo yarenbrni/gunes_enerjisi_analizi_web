@@ -12,7 +12,10 @@ def analysis_form(request):
             solar_radiation=float(request.POST['radiation']),
             temperature=float(request.POST['temperature'])
         )
-
+        analysis.save()
+        power = analysis.calculate_power()
+        return render(request, 'solar_analysis/result.html', {'analysis': analysis, 'power': power})
+    return render(request, 'solar_analysis/form.html')
 
 def panel_list(request):
     panels = Panel.objects.all()
@@ -25,8 +28,3 @@ def panel_detail(request, panel_id):
         'panel': panel,
         'analyses': analyses
     })
-
-        analysis.save()
-        power = analysis.calculate_power()
-        return render(request, 'solar_analysis/result.html', {'analysis': analysis, 'power': power})
-    return render(request, 'solar_analysis/form.html')
