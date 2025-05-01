@@ -1,13 +1,67 @@
 
-<!DOCTYPE html>
-<html lang="tr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title }}</title>
-</head>
-<body>
-    <h1>Django ile Web Sayfanıza Hoş Geldiniz!</h1>
-    <p>Bu bir örnek sayfadır. Buradan istediğiniz gibi geliştirme yapabilirsiniz.</p>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Güneş Enerjisi Sistemi Analizi</h1>
+    
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <div class="card shadow">
+                <div class="card-body">
+                    <h5 class="card-title">Proje Hakkında</h5>
+                    <p class="card-text">
+                        Bu proje, güneş enerjisi sistemlerinin performans analizini yapmak için geliştirilmiş bir araçtır. 
+                        Sistemin temel bileşenleri:
+                    </p>
+                    <ul>
+                        <li>Güneş paneli verimliliği analizi</li>
+                        <li>Sıcaklık etkisi hesaplaması</li>
+                        <li>Konum bazlı güneş radyasyonu değerlendirmesi</li>
+                        <li>Enerji üretim potansiyeli hesaplaması</li>
+                    </ul>
+                    
+                    <div class="text-center mt-4">
+                        <a href="{% url 'analysis_form' %}" class="btn btn-primary btn-lg">
+                            Analiz Başlat
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-md-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Panel Verimliliği</h5>
+                    <p class="card-text">
+                        Güneş panellerinin verimlilik hesaplamaları ve performans analizi yapılır.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Sıcaklık Etkisi</h5>
+                    <p class="card-text">
+                        Sıcaklığın panel verimliliğine etkisi hesaplanır ve optimize edilir.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Enerji Üretimi</h5>
+                    <p class="card-text">
+                        Sistemin üretebileceği enerji miktarı tahmin edilir ve raporlanır.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

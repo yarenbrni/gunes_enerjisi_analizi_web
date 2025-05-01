@@ -2,4 +2,6 @@
 from django.shortcuts import render
 
 def home(request):
-    return render(request, 'home.html', {'title': 'Ana Sayfa'})
+    return render(request, 'home.html', {
+        'title': 'Güneş Enerjisi Analizi'
+    })
