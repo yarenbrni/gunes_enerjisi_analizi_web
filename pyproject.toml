@@ -12,4 +12,11 @@ dependencies = [
     "psycopg2-binary>=2.9.10",
     "flask-wtf>=1.2.2",
     "django>=5.2",
+    "numpy>=2.2.5",
+    "xgboost>=3.0.0",
+    "scikit-learn>=1.6.1",
+    "statsmodels>=0.14.4",
+    "matplotlib>=3.10.1",
+    "seaborn>=0.13.2",
+    "pandas>=2.2.3",
 ]
