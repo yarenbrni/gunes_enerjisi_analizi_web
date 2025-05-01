@@ -27,3 +27,13 @@ class SolarAnalysis(models.Model):
 
     def __str__(self):
         return f"Solar Analysis for {self.location}"
+
+class Inverter(models.Model):
+    name = models.CharField(max_length=100)
+    power_rating = models.FloatField(help_text="kW cinsinden güç değeri")
+    efficiency = models.FloatField(help_text="Verimlilik yüzdesi")
+    installation_date = models.DateField()
+    last_maintenance = models.DateField(null=True, blank=True)
+    
+    def __str__(self):
+        return f"{self.name} ({self.power_rating}kW)"

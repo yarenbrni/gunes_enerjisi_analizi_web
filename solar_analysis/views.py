@@ -43,7 +43,36 @@ def overview(request):
     return render(request, 'solar_analysis/overview.html', context)
 
 def inverter_analysis(request):
-    return render(request, 'solar_analysis/inverter_analysis.html')
+    inverters = Inverter.objects.all()
+    years = range(2018, 2026)  # 2018-2025 yılları
+    
+    selected_inverter_id = request.GET.get('inverter')
+    start_year = int(request.GET.get('start_year', 2018))
+    end_year = int(request.GET.get('end_year', 2025))
+    
+    context = {
+        'inverters': inverters,
+        'years': years,
+        'start_year': start_year,
+        'end_year': end_year
+    }
+    
+    if selected_inverter_id:
+        selected_inverter = get_object_or_404(Inverter, id=selected_inverter_id)
+        
+        # Performans verilerini hesapla
+        performance_data = {
+            'avg_efficiency': 95.5,  # Örnek veri
+            'total_hours': 8760 * (end_year - start_year + 1),  # Yıllık saat * yıl sayısı
+        }
+        
+        context.update({
+            'selected_inverter': selected_inverter.id,
+            'selected_inverter_data': selected_inverter,
+            'performance_data': performance_data
+        })
+    
+    return render(request, 'solar_analysis/inverter_analysis.html', context)
 
 def maintenance_prediction(request):
     panels = Panel.objects.all()

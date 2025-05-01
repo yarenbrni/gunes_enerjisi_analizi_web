@@ -4,22 +4,75 @@
 {% block content %}
 <div class="container mt-5">
     <h2>İnvertör Analizi</h2>
-    <div class="row">
-        <div class="col-md-6">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Verimlilik Grafiği</h5>
-                    <canvas id="efficiencyChart"></canvas>
+    
+    <div class="card">
+        <div class="card-body">
+            <form method="get" class="mb-4">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="inverter">İnvertör Seçimi:</label>
+                            <select name="inverter" id="inverter" class="form-control">
+                                <option value="">Seçiniz...</option>
+                                {% for inverter in inverters %}
+                                <option value="{{ inverter.id }}" {% if selected_inverter == inverter.id %}selected{% endif %}>
+                                    {{ inverter.name }}
+                                </option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="start_year">Başlangıç Yılı:</label>
+                            <select name="start_year" id="start_year" class="form-control">
+                                {% for year in years %}
+                                <option value="{{ year }}" {% if start_year == year %}selected{% endif %}>{{ year }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="end_year">Bitiş Yılı:</label>
+                            <select name="end_year" id="end_year" class="form-control">
+                                {% for year in years %}
+                                <option value="{{ year }}" {% if end_year == year %}selected{% endif %}>{{ year }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary mt-3">Analiz Et</button>
+            </form>
+
+            {% if selected_inverter %}
+            <div class="mt-4">
+                <h4>{{ selected_inverter_data.name }} Analiz Sonuçları</h4>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5>Temel Bilgiler</h5>
+                                <p>Güç Değeri: {{ selected_inverter_data.power_rating }} kW</p>
+                                <p>Verimlilik: {{ selected_inverter_data.efficiency }}%</p>
+                                <p>Kurulum Tarihi: {{ selected_inverter_data.installation_date }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5>Performans Özeti</h5>
+                                <p>Ortalama Verimlilik: {{ performance_data.avg_efficiency }}%</p>
+                                <p>Toplam Çalışma Süresi: {{ performance_data.total_hours }} saat</p>
+                                <p>Son Bakım: {{ selected_inverter_data.last_maintenance|default:"Bakım bilgisi yok" }}</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-md-6">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Sıcaklık Analizi</h5>
-                    <canvas id="temperatureChart"></canvas>
-                </div>
-            </div>
+            {% endif %}
         </div>
     </div>
 </div>
