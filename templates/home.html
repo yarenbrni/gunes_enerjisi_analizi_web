@@ -2,63 +2,62 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="container mt-5">
-    <h1 class="text-center mb-4">Güneş Enerjisi Sistemi Analizi</h1>
+<div class="container">
+    <h1 class="text-center mb-5">Güneş Enerji Paneli İzleme Sistemi</h1>
     
     <div class="row">
-        <div class="col-md-8 mx-auto">
+        <div class="col-md-12">
             <div class="card shadow">
                 <div class="card-body">
-                    <h5 class="card-title">Proje Hakkında</h5>
+                    <h5 class="card-title">Sistem Özeti</h5>
                     <p class="card-text">
-                        Bu proje, güneş enerjisi sistemlerinin performans analizini yapmak için geliştirilmiş bir araçtır. 
-                        Sistemin temel bileşenleri:
+                        Bu sistem, güneş enerji panellerinizin performansını gerçek zamanlı olarak izlemenizi ve analiz etmenizi sağlar.
                     </p>
-                    <ul>
-                        <li>Güneş paneli verimliliği analizi</li>
-                        <li>Sıcaklık etkisi hesaplaması</li>
-                        <li>Konum bazlı güneş radyasyonu değerlendirmesi</li>
-                        <li>Enerji üretim potansiyeli hesaplaması</li>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <i class="fas fa-sun text-warning me-2"></i>
+                            Panel Verimliliği Takibi
+                        </li>
+                        <li class="list-group-item">
+                            <i class="fas fa-temperature-high text-danger me-2"></i>
+                            Sıcaklık Analizi
+                        </li>
+                        <li class="list-group-item">
+                            <i class="fas fa-chart-bar text-primary me-2"></i>
+                            Enerji Üretim Raporları
+                        </li>
                     </ul>
-                    
-                    <div class="text-center mt-4">
-                        <a href="{% url 'analysis_form' %}" class="btn btn-primary btn-lg">
-                            Analiz Başlat
-                        </a>
-                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="row mt-5">
-        <div class="col-md-4">
+    <div class="row mt-4">
+        <div class="col-md-6">
             <div class="card h-100">
                 <div class="card-body">
-                    <h5 class="card-title">Panel Verimliliği</h5>
-                    <p class="card-text">
-                        Güneş panellerinin verimlilik hesaplamaları ve performans analizi yapılır.
-                    </p>
+                    <h5 class="card-title">
+                        <i class="fas fa-tachometer-alt text-primary me-2"></i>
+                        Anlık Performans
+                    </h5>
+                    <p class="card-text">Sistemin güncel performans değerlerini görüntüleyin.</p>
+                    <a href="{% url 'analysis_form' %}" class="btn btn-primary">
+                        Analiz Başlat
+                    </a>
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-6">
             <div class="card h-100">
                 <div class="card-body">
-                    <h5 class="card-title">Sıcaklık Etkisi</h5>
-                    <p class="card-text">
-                        Sıcaklığın panel verimliliğine etkisi hesaplanır ve optimize edilir.
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card h-100">
-                <div class="card-body">
-                    <h5 class="card-title">Enerji Üretimi</h5>
-                    <p class="card-text">
-                        Sistemin üretebileceği enerji miktarı tahmin edilir ve raporlanır.
-                    </p>
+                    <h5 class="card-title">
+                        <i class="fas fa-history text-success me-2"></i>
+                        Geçmiş Veriler
+                    </h5>
+                    <p class="card-text">Geçmiş analiz sonuçlarını ve raporları inceleyin.</p>
+                    <a href="#" class="btn btn-success">
+                        Raporları Görüntüle
+                    </a>
                 </div>
             </div>
         </div>
