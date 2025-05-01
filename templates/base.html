@@ -47,13 +47,22 @@
             <a class="nav-link" href="{% url 'home' %}">
                 <i class="fas fa-home"></i> Ana Sayfa
             </a>
+            <a class="nav-link" href="{% url 'overview' %}">
+                <i class="fas fa-tachometer-alt"></i> Genel Bakış
+            </a>
             <a class="nav-link" href="{% url 'analysis_form' %}">
                 <i class="fas fa-solar-panel"></i> Panel Analizi
             </a>
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="{% url 'inverter_analysis' %}">
+                <i class="fas fa-bolt"></i> İnvertör Analizi
+            </a>
+            <a class="nav-link" href="{% url 'maintenance_prediction' %}">
+                <i class="fas fa-tools"></i> Bakım Tahmini
+            </a>
+            <a class="nav-link" href="{% url 'statistics' %}">
                 <i class="fas fa-chart-line"></i> İstatistikler
             </a>
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="{% url 'settings' %}">
                 <i class="fas fa-cog"></i> Ayarlar
             </a>
         </nav>

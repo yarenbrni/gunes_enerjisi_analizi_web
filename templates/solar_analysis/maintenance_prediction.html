@@ -1,0 +1,36 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2>Bakım Tahmini</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Panel ID</th>
+                    <th>Verimlilik</th>
+                    <th>Son Bakım</th>
+                    <th>Durum</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for panel in panels %}
+                <tr>
+                    <td>{{ panel.panel_id }}</td>
+                    <td>{{ panel.current_efficiency }}%</td>
+                    <td>{{ panel.last_maintenance|default:"Bakım yapılmamış" }}</td>
+                    <td>
+                        {% if panel.maintenance_needed %}
+                        <span class="badge bg-danger">Bakım Gerekli</span>
+                        {% else %}
+                        <span class="badge bg-success">İyi Durumda</span>
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

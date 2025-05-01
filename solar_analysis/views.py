@@ -28,3 +28,40 @@ def panel_detail(request, panel_id):
         'panel': panel,
         'analyses': analyses
     })
+
+def overview(request):
+    panels = Panel.objects.all()
+    total_power = sum(panel.power_rating for panel in panels)
+    avg_efficiency = sum(panel.current_efficiency for panel in panels) / len(panels) if panels else 0
+    
+    context = {
+        'total_panels': len(panels),
+        'total_power': total_power,
+        'avg_efficiency': avg_efficiency,
+        'panels': panels
+    }
+    return render(request, 'solar_analysis/overview.html', context)
+
+def inverter_analysis(request):
+    return render(request, 'solar_analysis/inverter_analysis.html')
+
+def maintenance_prediction(request):
+    panels = Panel.objects.all()
+    for panel in panels:
+        # Basit bir bakım tahmini algoritması
+        efficiency_threshold = 85
+        if panel.current_efficiency < efficiency_threshold:
+            panel.maintenance_needed = True
+        else:
+            panel.maintenance_needed = False
+    
+    context = {
+        'panels': panels
+    }
+    return render(request, 'solar_analysis/maintenance_prediction.html', context)
+
+def statistics(request):
+    return render(request, 'solar_analysis/statistics.html')
+
+def settings(request):
+    return render(request, 'solar_analysis/settings.html')
