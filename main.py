@@ -1,4 +1,9 @@
-from app import app  # noqa: F401
+
+from django.core.management import execute_from_command_line
+import os
+import sys
+
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'mysite.settings')
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    execute_from_command_line(sys.argv)
