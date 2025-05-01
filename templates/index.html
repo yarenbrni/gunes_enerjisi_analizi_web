@@ -1,0 +1,224 @@
+{% extends 'base.html' %}
+
+{% block title %}ModernWeb - Home{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-5 mb-lg-0">
+                <h1 class="display-4 fw-bold">Create Your <span class="gradient-text">Amazing</span> Website</h1>
+                <p class="lead text-muted">We build modern, responsive websites that help your business stand out and connect with customers.</p>
+                <div class="d-flex flex-wrap gap-2">
+                    <a href="{{ url_for('services') }}" class="btn btn-gradient btn-lg px-4 py-2">Our Services</a>
+                    <a href="{{ url_for('contact') }}" class="btn btn-outline-primary btn-lg px-4 py-2">Contact Us</a>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <svg class="img-fluid" viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg">
+                    <style>
+                        .st0{fill:#F0F0F0;} .st1{fill:#E0E0E0;} .st2{fill:#007BFF;} .st3{fill:#6610F2;} 
+                        .st4{fill:#FFFFFF;} .st5{fill:#D0D0D0;} .st6{opacity:0.2;}
+                    </style>
+                    <g>
+                        <path class="st0" d="M420,320H80c-5.5,0-10-4.5-10-10V90c0-5.5,4.5-10,10-10h340c5.5,0,10,4.5,10,10v220C430,315.5,425.5,320,420,320z"/>
+                        <path class="st1" d="M420,320H80c-5.5,0-10-4.5-10-10v-30h360v30C430,315.5,425.5,320,420,320z"/>
+                        <rect x="100" y="110" class="st4" width="300" height="150"/>
+                        <rect x="120" y="130" class="st2" width="80" height="10"/>
+                        <rect x="120" y="150" class="st5" width="260" height="5"/>
+                        <rect x="120" y="165" class="st5" width="200" height="5"/>
+                        <rect x="120" y="180" class="st5" width="230" height="5"/>
+                        <rect x="120" y="195" class="st5" width="180" height="5"/>
+                        <rect x="120" y="220" class="st3" width="100" height="20" rx="5"/>
+                        <path class="st6" d="M150,350H70c-11,0-20-9-20-20v-20h120v20C170,341,161,350,150,350z"/>
+                        <path class="st6" d="M430,350H350c-11,0-20-9-20-20v-20h120v20C450,341,441,350,430,350z"/>
+                    </g>
+                </svg>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-6 text-center">
+                <h2 class="fw-bold mb-3">Why Choose Us</h2>
+                <p class="text-muted">We deliver exceptional web experiences with cutting-edge technologies and designs that help your business succeed online.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="feature-card">
+                    <div class="card-body">
+                        <div class="feature-icon">
+                            <i class="fas fa-desktop"></i>
+                        </div>
+                        <h4>Responsive Design</h4>
+                        <p class="text-muted">Our websites look great on all devices, from desktops to smartphones and tablets.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="feature-card">
+                    <div class="card-body">
+                        <div class="feature-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h4>Fast Loading</h4>
+                        <p class="text-muted">We optimize for speed to ensure your visitors have a smooth and enjoyable experience.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="feature-card">
+                    <div class="card-body">
+                        <div class="feature-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h4>SEO Friendly</h4>
+                        <p class="text-muted">Our websites are optimized for search engines to help your business rank higher.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="feature-card">
+                    <div class="card-body">
+                        <div class="feature-icon">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
+                        <h4>Creative Design</h4>
+                        <p class="text-muted">We create beautiful, unique designs that reflect your brand identity.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="feature-card">
+                    <div class="card-body">
+                        <div class="feature-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h4>Clean Code</h4>
+                        <p class="text-muted">Our development practices ensure maintainable and scalable web applications.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="feature-card">
+                    <div class="card-body">
+                        <div class="feature-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h4>Dedicated Support</h4>
+                        <p class="text-muted">We provide ongoing support and maintenance for all our clients.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+                <h2 class="fw-bold mb-3">Ready to Start Your Project?</h2>
+                <p class="lead text-muted mb-4">Let's discuss how we can help you achieve your goals with a custom website solution.</p>
+                <a href="{{ url_for('contact') }}" class="btn btn-gradient btn-lg px-5 py-3">Get In Touch</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-6 text-center">
+                <h2 class="fw-bold mb-3">What Our Clients Say</h2>
+                <p class="text-muted">Don't take our word for it. Here's what our clients have to say about our work.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body p-4">
+                        <div class="mb-3">
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                        </div>
+                        <p class="card-text">"ModernWeb transformed our online presence with a stunning website that perfectly captures our brand. The team was professional and responsive throughout the entire process."</p>
+                        <div class="d-flex align-items-center mt-4">
+                            <div class="flex-shrink-0">
+                                <div class="bg-primary rounded-circle text-white d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                                    <span class="fw-bold">JD</span>
+                                </div>
+                            </div>
+                            <div class="flex-grow-1 ms-3">
+                                <h5 class="mb-0">John Doe</h5>
+                                <p class="text-muted mb-0">CEO, Tech Solutions</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body p-4">
+                        <div class="mb-3">
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                        </div>
+                        <p class="card-text">"Working with ModernWeb was a pleasure. They were able to take our ideas and turn them into a beautiful, functional website that exceeded our expectations."</p>
+                        <div class="d-flex align-items-center mt-4">
+                            <div class="flex-shrink-0">
+                                <div class="bg-primary rounded-circle text-white d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                                    <span class="fw-bold">JS</span>
+                                </div>
+                            </div>
+                            <div class="flex-grow-1 ms-3">
+                                <h5 class="mb-0">Jane Smith</h5>
+                                <p class="text-muted mb-0">Marketing Director, BrandCo</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body p-4">
+                        <div class="mb-3">
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                        </div>
+                        <p class="card-text">"The team at ModernWeb delivered our e-commerce site on time and within budget. The results have been fantastic, with increased sales and customer satisfaction."</p>
+                        <div class="d-flex align-items-center mt-4">
+                            <div class="flex-shrink-0">
+                                <div class="bg-primary rounded-circle text-white d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                                    <span class="fw-bold">RJ</span>
+                                </div>
+                            </div>
+                            <div class="flex-grow-1 ms-3">
+                                <h5 class="mb-0">Robert Johnson</h5>
+                                <p class="text-muted mb-0">Owner, Fashion Boutique</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

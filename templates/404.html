@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}ModernWeb - Page Not Found{% endblock %}
+
+{% block content %}
+<!-- 404 Error Section -->
+<section class="error-page">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+                <div class="error-code">404</div>
+                <h1 class="fw-bold mb-4 error-message">Page Not Found</h1>
+                <p class="lead text-muted mb-5">The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.</p>
+                <a href="{{ url_for('index') }}" class="btn btn-gradient btn-lg px-5 py-3">Back to Home</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
