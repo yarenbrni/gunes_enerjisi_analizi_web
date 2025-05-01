@@ -1,0 +1,42 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2>Mevcut Panel Envanteri</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Panel ID</th>
+                    <th>Üretici</th>
+                    <th>Model</th>
+                    <th>Güç Değeri</th>
+                    <th>Kurulum Tarihi</th>
+                    <th>Güncel Verimlilik</th>
+                    <th>Son Bakım</th>
+                    <th>İşlemler</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for panel in panels %}
+                <tr>
+                    <td>{{ panel.panel_id }}</td>
+                    <td>{{ panel.manufacturer }}</td>
+                    <td>{{ panel.model_name }}</td>
+                    <td>{{ panel.power_rating }} W</td>
+                    <td>{{ panel.installation_date }}</td>
+                    <td>{{ panel.current_efficiency }}%</td>
+                    <td>{{ panel.last_maintenance|default:"-" }}</td>
+                    <td>
+                        <a href="{% url 'panel_detail' panel.id %}" class="btn btn-sm btn-info">
+                            <i class="fas fa-chart-line"></i> Analiz
+                        </a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
